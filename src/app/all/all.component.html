@@ -1,0 +1,33 @@
+<input type="text" [(ngModel)]="word">
+<p>{{word | pipec}}</p>
+<button (click)="click()">Click me</button>
+<table class="table-bordered">
+    <th>S/N</th>
+    <th>PRODUCT</th>
+    <th>QUANTITY</th>
+    <th>PRICE</th>
+    <th>AMOUNT</th>
+    <th>ACTION</th>
+    <tr *ngFor="let n of array; let i=index">
+     <td>{{i+1}}</td>
+     <td><input type="text" [(ngModel)]="n.name" [disabled]="n.editable"></td>
+     <td><input type="text" [(ngModel)]="n.qt" [disabled]="n.editable"></td>
+     <td><input type="text" [(ngModel)]="n.pr" [disabled]="n.editable"></td>
+     <td>{{n.qt*n.pr}}</td>
+     <td>
+         <button (click)="edit(i)">{{n.editable?"EDIT": "SAVE"}}</button>
+         <button (click)="del(i)">DELETE</button>
+     </td>
+    </tr>
+</table>
+<button (click)="add()">ADD</button>
+<p>{{grandtot | currency:"&#8358;"}}</p>
+<!-- <button (click)="del()" [disabled]="none">Delete</button> -->
+
+<form action="" [formGroup]="forms" class="d-block form-group">
+    <input type="text" placeholder="Email" formControlName="email" required class="form-control-lg"><br>
+    <span style="color: red;" *ngIf="email?.invalid && email?.touched">INAVLID EMAIL</span><br>
+    <input type="text" formControlName="pass" required class="form-control-lg"><br>
+    <span style="color: red;" *ngIf="pass?.invalid && pass?.touched">INVALID PASSWORD</span><br>
+    <button [disabled]="forms?.invalid">SUBMIT</button>
+</form>

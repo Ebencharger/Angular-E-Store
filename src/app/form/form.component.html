@@ -1,0 +1,11 @@
+<form class="form" [formGroup]="forms">
+    <p>LOGIN PAGE</p>
+    <!-- {{forms.value | json}} -->
+    <label for="" class="bg-danger">Email:</label>
+    <input type="text" class="email" formControlName="email">
+    <span style="color: red;" *ngIf="email?.invalid && email?.touched">INVALID EMAIL</span><br>
+    <label for="">Password:</label>
+    <input type="password" formControlName="pass">
+    <span style="color: red;" *ngIf="pass?.invalid && pass?.touched">INVALID PASSWORD</span>
+    <button [disabled]="forms.invalid">LOGIN</button>
+</form>

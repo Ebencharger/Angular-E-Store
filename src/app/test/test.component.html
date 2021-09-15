@@ -1,0 +1,24 @@
+<p >GRANDTOTAL={{"20000" | currency:"&#8358;"}}</p>
+<p>{{word | titlecase}}</p>
+<h1>{{"Tue Aug 24 2021 12:16:55 GMT+0100" | date:"medium"}}</h1>
+<button (click)="apply()">CLICK</button><br>
+<input type="text" [(ngModel)]="new" style="margin-top: 30px;" placeholder="Type number inside">
+<h1>{{new | angpipe}}</h1>
+<p>{{greet}}</p>
+<p>LET ME MULTIPLY TWO NUMBER TILL ANY NUMBER</p>
+<input type="text" [(ngModel)]="num" placeholder="NUMBER 1" style="margin-bottom: 20px;"><br>
+<input type="text" [(ngModel)]="num2" placeholder="NUMBER 2" style="margin-bottom: 20px;"><br>
+<input type="text" [(ngModel)]="num3" placeholder="LIMIT" style="margin-bottom: 20px;"><br>
+<button (click)="submit()">SUBMIT</button>
+<!-- <p *ngFor="let n of answer">{{n}}</p> -->
+<table>
+    <tr *ngFor="let n of answer;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{"*"}}</td>
+        <td>{{num2}}</td>
+        <td>{{n}}</td>
+    </tr>
+</table>
+
+
+

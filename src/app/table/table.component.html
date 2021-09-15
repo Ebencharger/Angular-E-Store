@@ -1,0 +1,30 @@
+<main class="row">
+<main class="col-sm">
+<div class="header">E-RECEIPT</div>
+<table>
+    <th>S/N</th>
+        <th>PRODUCT</th>
+        <th>QUANTITY</th>
+        <th>PRICE</th>
+        <th>TOTAL</th>
+        <th [hidden]="hide">ACTION</th>
+    <tr *ngFor="let n of product; let i=index">
+        <td>{{i+1}}</td>
+        <td><input type="text" [(ngModel)]="n.name" [disabled]="n.editable"></td>
+        <td><input type="text" [(ngModel)]="n.qt" [disabled]="n.editable"></td>
+        <td><input type="text" [(ngModel)]="n.pr" [disabled]="n.editable"></td>
+        <td>{{n.qt*n.pr}}</td>
+        <td [hidden]="hide"><button id="edit" (click)="edit(i)">{{n.editable?"Edit" : "Save"}}</button> <button id="delete" (click)="delete(i)">DELETE</button></td>
+    </tr>
+</table>
+<button id="add" (click)="apply()" [hidden]="hide">+</button>
+<div id="grandtot">GRANDTOTAL={{grandtot | currency:"&#8358;"}}</div>
+<div class="receipt" [hidden]="hide" (click)="prin()">REQUEST FOR RECEIPT</div>
+<p class="cutname">{{b}}</p>
+<!-- <h1>{{"2500" | newpipe}}</h1>
+<input type="text" [(ngModel)]="angle">
+<button [ngClass]="{'btn btn-danger':angle=='danger', 'btn btn-success':angle=='success', 'btn btn-dark':angle=='dark'}">CLICK ME</button> -->
+</main>
+</main>
+
+

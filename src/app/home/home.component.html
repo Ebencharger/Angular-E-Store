@@ -1,0 +1,21 @@
+<div class="header">E-RECEIPT</div>
+<table>
+    <th>S/N</th>
+    <th>PRODUCT</th>
+    <th>QUANTITY</th>
+    <th>PRICE</th>
+    <th>TOTAL</th>
+    <th>ACTION</th>
+    <tr *ngFor="let n of newname; let i=index">
+        <td>{{i+1}}</td>
+        <td></td>
+        <td><input type="text" [(ngModel)]="n.qt"></td>
+        <td><input type="text" [(ngModel)]="n.pr"></td>
+        <td>{{n.qt*n.pr}}</td>
+        <td><button id="delete" (click)="delete(i)">DELETE</button></td>
+    </tr>
+</table>
+<button id="add" (click)="apply()">+</button>
+
+<div id="grandtot">GRANDTOTAL=&#8358;{{namet}}</div>
+

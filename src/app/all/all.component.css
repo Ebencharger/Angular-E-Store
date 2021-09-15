@@ -1,0 +1,10 @@
+@import url("../../assets/bootstrap.css");
+table {
+  width: 100%;
+}
+table input {
+  outline: none;
+  border: none;
+}
+
+/*# sourceMappingURL=all.component.css.map */
